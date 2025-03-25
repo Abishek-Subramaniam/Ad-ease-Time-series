@@ -1,0 +1,41 @@
+Overall Inference and Best Model Selection
+
+Best Model:
+
+The SARIMA model is the best-performing model based on error metrics. Its ability to incorporate seasonal trends and non-seasonal components is particularly valuable for this dataset, as indicated by the lowest MAE, RMSE, and MAPE values.
+
+MAE: 11,445,292.846
+
+RMSE: 13,532,224.062
+
+MAPE: 0.097 (9.7%)
+
+Analysis:
+
+The SARIMA model outperforms all other models with the lowest MAE, RMSE, and MAPE values, indicating that it effectively captures both seasonal and non-seasonal patterns in the data. The model’s MAPE of 9.7% reflects high accuracy, making it the best-suited model for this dataset.
+
+MAE: 10,390,978.253
+
+RMSE: 16,121,538.82
+
+MAPE: 0.087 (8.7%)
+
+Analysis
+
+The Prophet model achieves a MAPE of 8.7%, which is lower than most of the other models except for SARIMA. With a lower MAE and competitive RMSE, Prophet is highly effective for this time series dataset.
+
+Comparison with SARIMA and Other Models
+
+The SARIMA model still slightly outperforms Prophet in terms of RMSE and MAE, with a MAPE of 9.7%. However, the Prophet model’s MAPE of 8.7% reflects higher accuracy, suggesting Prophet might generalize better when trends and seasonality are more varied.
+
+Considerations:
+
+Prophet for a more flexible, robust model suited for complex seasonality and varied patterns.
+
+SARIMA if seasonality is well-defined and consistency across series is desired.
+
+ARMA performs well with 11.7% MAPE, making it a viable choice if a simpler model is needed without explicit seasonality.
+
+AR(1) also shows reasonable performance and can be useful for short-term forecasting where simpler models are preferred.
+
+
