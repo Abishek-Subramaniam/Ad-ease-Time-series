@@ -1,43 +1,31 @@
 # Ad-ease-Time-series
 Ad Ease is an ads and marketing based company helping businesses elicit maximum clicks @ minimum cost. AdEase is an ad infrastructure to help businesses promote themselves easily, effectively, and economically. 
 
-Overall Inference and Best Model Selection
+Observations
 
-Best Model:
+Problem Statement:
 
-The SARIMA model is the best-performing model based on error metrics. Its ability to incorporate seasonal trends and non-seasonal components is particularly valuable for this dataset, as indicated by the lowest MAE, RMSE, and MAPE values.
+The main goal is to forecast the daily view counts on various Wikipedia pages to optimize ad placements for Ad Ease’s clients.
 
-MAE: 11,445,292.846
+Usage Scenarios:
 
-RMSE: 13,532,224.062
+Advertising Optimization: Businesses can use this forecasted data to time and place their ads for maximum engagement.
 
-MAPE: 0.097 (9.7%)
+Content and Media Planning: Content providers can target high-traffic pages to drive awareness or releases during peak times.
 
-Analysis:
+*Decomposition of Series *
 
-The SARIMA model outperforms all other models with the lowest MAE, RMSE, and MAPE values, indicating that it effectively captures both seasonal and non-seasonal patterns in the data. The model’s MAPE of 9.7% reflects high accuracy, making it the best-suited model for this dataset.
+Trend: The long-term direction of the data, showing an overall increase or decrease over time.
 
-MAE: 10,390,978.253
+Seasonality: The repeated patterns or cycles in the data at regular intervals, such as daily, weekly, or monthly.
 
-RMSE: 16,121,538.82
+Differencing
 
-MAPE: 0.087 (8.7%)
+Differencing was applied once (i.e., first-order differencing) in most cases to achieve stationarity. However, some series with strong seasonality might require seasonal differencing or second-order differencing depending on the outcome of the Augmented Dickey-Fuller (ADF) test.
 
-Analysis
+ARIMA (AutoRegressive Integrated Moving Average): Models a time series based solely on its own past values (autoregression) and past forecast errors (moving average). It assumes the data is stationary.
 
-The Prophet model achieves a MAPE of 8.7%, which is lower than most of the other models except for SARIMA. With a lower MAE and competitive RMSE, Prophet is highly effective for this time series dataset.
+SARIMA (Seasonal ARIMA): Extends ARIMA by adding seasonal components to handle seasonality in the data. It includes additional parameters for seasonal autoregression, seasonal differencing, and seasonal moving average.
 
-Comparison with SARIMA and Other Models
-
-The SARIMA model still slightly outperforms Prophet in terms of RMSE and MAE, with a MAPE of 9.7%. However, the Prophet model’s MAPE of 8.7% reflects higher accuracy, suggesting Prophet might generalize better when trends and seasonality are more varied.
-
-Considerations:
-
-Prophet for a more flexible, robust model suited for complex seasonality and varied patterns.
-
-SARIMA if seasonality is well-defined and consistency across series is desired.
-
-ARMA performs well with 11.7% MAPE, making it a viable choice if a simpler model is needed without explicit seasonality.
-
-AR(1) also shows reasonable performance and can be useful for short-term forecasting where simpler models are preferred.
+SARIMAX (Seasonal ARIMA with Exogenous Regressors): Further extends SARIMA by incorporating external variables (exogenous variables) that might affect the time series, such as campaign data, which can improve model accuracy.
 
